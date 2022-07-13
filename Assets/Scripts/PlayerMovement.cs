@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float turnSpeed = 20f;
+    public GameObject mainCam;
+
     Vector3 m_Movement;
     Quaternion m_Rotation = Quaternion.identity;
     Animator m_Animator;
@@ -25,7 +27,24 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        m_Movement.Set(horizontal, 0f, vertical);
+        Debug.Log("Right" + mainCam.transform.right);
+        Debug.Log("Forward" + mainCam.transform.forward);
+        Debug.Log("Vertical" + vertical);
+        Debug.Log("Hortizontal" + horizontal);
+        var camForward = mainCam.transform.forward; // vector of the forward direction (+z)
+        var camRight = mainCam.transform.right; // vector of the right direction (+x)
+        camForward.y = 0f;
+        camRight.y = 0f;
+        camForward.Normalize();
+        camRight.Normalize();
+
+        float camHorizontal = camForward.x;
+        float camVertical = camForward.z;
+
+        var temp = camForward * vertical;
+        var temp1 = camRight * horizontal;
+        var direction = temp + temp1;
+        m_Movement.Set(direction.x, 0f, direction.z);
         m_Movement.Normalize();
 
         bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
