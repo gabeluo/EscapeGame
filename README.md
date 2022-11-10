@@ -5,8 +5,23 @@ The game features a character, temporarily named John Lemon for his unique head,
 
 The camera has been changed to being over-the-shoulder and controlled by a mouse, which gives a more immersive experience and increases the difficulty since it is harder to see where the ghosts are.
 
+# Further improvements
+- The goal is to add an escape room element to the game, rather than just navigating through the maze
+- Add inventory system
+- Add interactive objects (keys, opening a book, pushing buttons)
+- Modify map to add complexity and variation
+- Add additional enemies, generate variation in their behaviour to add difficulty
+- Add title screen
+- Add user settings (sound volume, mouse sensitivity, etc)
+- Fix any miscellaneous bugs
+- and much more!
+
 # Playing the game
-To play the game, copy the "Build" folder to your local directory and run the .exe file inside.
+The game is best played as an application on a computer. Copy the "Build" folder to your local directory and run the .exe file inside.
+
+If necessary, a build has been made with WebGL so that it can be played using the link below for convinience.
+
+https://play.unity.com/mg/other/webgl-build-850
 
 # Screenshots
 Below are some screenshots of the game.
